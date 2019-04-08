@@ -23,6 +23,7 @@ export class RegisterPage {
   response: any;
   userData;
   confirmCode;
+
   constructor(
     public keyboard: Keyboard,
     public native: NativePageTransitions,
@@ -58,8 +59,8 @@ export class RegisterPage {
           swal("Ошибка!", `${this.response.error}`, "error");
           return 0;
         }
-        this.confirmCode = Math.floor(Math.random()*(9999-1000+1)+1000);
-        this.http.get('https://api.mobizon.kz/service/message/sendsmsmessage?recipient=' + this.user.phone + '&text=Код потверждения для SmartОпроса: '+ this.confirmCode +'&apiKey=kz4f23285577ca032ca69150a6fd7378d04a8da887e3e6dc06393bdbfa446185e0d961').subscribe(data => {
+        this.confirmCode = Math.floor(Math.random() * (9999 - 1000 + 1) + 1000);
+        this.http.get('https://api.mobizon.kz/service/message/sendsmsmessage?recipient=' + this.user.phone + '&text=Код потверждения для SmartОпроса: ' + this.confirmCode + '&apiKey=kz4f23285577ca032ca69150a6fd7378d04a8da887e3e6dc06393bdbfa446185e0d961').subscribe(data => {
         });
         this.userData.append("pass", this.confirmCode);
         this.beforeSMS = false;
@@ -67,7 +68,7 @@ export class RegisterPage {
       return 0;
     }
 
-    if(!this.user.confirmCode == this.confirmCode){
+    if (!this.user.confirmCode == this.confirmCode) {
       swal("Ошибка!", `Введенный код подтверждения не совпадает с отправленным по SMS`, "error");
       return 0;
     }
@@ -82,14 +83,14 @@ export class RegisterPage {
   }
 
   goToAuth() {
-/*    let options: NativeTransitionOptions = {
+    let options: NativeTransitionOptions = {
       direction: 'left',
       duration: 200,
       slowdownfactor: -1
     }
 
     this.native.slide(options).then(_ => {
-    });*/
+    });
     this.navCtrl.setRoot("AuthPage");
 
 

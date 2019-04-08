@@ -73,15 +73,12 @@ export class PollPage {
 
   nextQuestion(item) {
     ++this.count;
-    /*    let options: NativeTransitionOptions = {
-          direction: 'left',
-          duration: 200,
-          slowdownfactor: -1
-        };
+    let options: NativeTransitionOptions = {
+      direction: 'left',
+      duration: 200,
+      slowdownfactor: -1
+    };
 
-        this.nativePageTransitions.slide(options).then(data => {
-
-        })*/
 
     if ((item !== 0) && !this.answerRadio) {
       swal("Ошибка!", "Пожалуйста, выберите вариант ответа", "error");
@@ -101,6 +98,9 @@ export class PollPage {
     }
     localStorage.setItem("answered_questions", JSON.stringify(this.answered_questions));
     if (this.count < this.length) {
+      this.nativePageTransitions.slide(options).then(data => {
+
+      })
       this.navCtrl.setRoot("PollPage", {
         count: this.count,
         color: this.color,
@@ -114,6 +114,9 @@ export class PollPage {
       formData.append("user_id", localStorage.getItem("user_id"));
       localStorage.removeItem("answered_questions");
       this.http.post(url, formData).subscribe(data => {
+        this.nativePageTransitions.slide(options).then(data => {
+
+        })
         this.navCtrl.setRoot("PollFinishPage")
       })
     }

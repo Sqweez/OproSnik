@@ -29,7 +29,7 @@ export class HomePage {
         console.log(this.balanceS);
         localStorage.setItem("current_balance", this.balanceS);
         this.splashScreen.hide()
-    });
+      });
 
   }
 
@@ -38,14 +38,13 @@ export class HomePage {
   }
 
   opros() {
-    /*    let options: NativeTransitionOptions = {
-          direction: 'left',
-          duration: 200,
-          slowdownfactor: -1
-        };
-        this.native.slide(options).then(() => {
-          this.navCtrl.setRoot("PollPage");
-        })*/
+    let options: NativeTransitionOptions = {
+      direction: 'left',
+      duration: 200,
+      slowdownfactor: -1
+    };
+
+
     let url = GLOBAL_CONFIG.url + 'api/get.php?action=getQuestions&user_id=' + localStorage.getItem("user_id");
     this.http.get(url).subscribe(data => {
       this.response = data;
@@ -59,6 +58,8 @@ export class HomePage {
       this.http.get(GLOBAL_CONFIG.url + 'api/getAdvertising.php?user_id=' + localStorage.getItem("user_id")).subscribe(data => {
         this.response = data;
         this.response = this.response._body;
+        this.native.slide(options).then(() => {
+        })
         this.navCtrl.setRoot("PollPage", {color: getColor(), advert: this.response})
       })
     })
