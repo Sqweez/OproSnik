@@ -1,14 +1,15 @@
-<ion-header>
+<ion-header no-border="">
   <ion-navbar>
     <ion-title>
-      Ionic Blank
     </ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="navCtrl.push('ProfilePage')">
+        <img src="../../assets/imgs/person.png" alt="" class="person__icon">
+        <ion-badge color="danger">{{balanceS}} ₸</ion-badge>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
-
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content class="content__main">
+  <button ion-button style="position:absolute; top: 50%; left: 50%; transform: translate(-50%,-50%)" (click)="opros()">Пройти опрос</button>
 </ion-content>

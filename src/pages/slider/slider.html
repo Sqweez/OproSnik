@@ -1,0 +1,15 @@
+<button class="slider-button__skip" (click)="navCtrl.setRoot('RegisterPage')">пропустить</button>
+<ion-slides pager (ionSlideDidChange)="slideChanged()">
+
+  <ion-slide
+    class="slider__container"
+    *ngFor="let item of images"
+    [ngStyle]="{
+      background: 'url('+ item +')',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover'
+    }">
+  </ion-slide>
+</ion-slides>
+<button ion-button color="light" round class="slider-button__continue" (click)="moveSlides()">Далее</button>

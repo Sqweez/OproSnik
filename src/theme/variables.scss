@@ -41,7 +41,9 @@ $colors: (
   dark:       #222
 );
 
-
+$text-input-placeholder-color: #87d2ad;
+$datetime-ios-placeholder-color:  #87d2ad;
+$datetime-ios-padding-start	: -7px;
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here

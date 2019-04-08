@@ -1,0 +1,48 @@
+<ion-header no-border="">
+  <ion-navbar>
+    <ion-title>
+      ОПРОС
+    </ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="navCtrl.push('ProfilePage')">
+        <img src="../../assets/imgs/person.png" alt="" class="person__icon">
+        <ion-badge color="danger">{{balance}} ₸</ion-badge>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content
+  no-bounce
+  class="no-scroll"
+  style="height: 100%; width: 100%"
+  [ngClass]="color.className">
+
+  <div
+    class="advertising__container"
+    (click)="bannerClickedEvent(advert.url)"
+    [ngStyle]="{
+    backgroundImage: 'url('+advert.img+')'
+    }">
+  </div>
+
+  <div class="question__container">
+    <h3>{{question.text}}</h3>
+    <ion-list no-lines class="question__list" no-padding="" no-margin="">
+      <ion-item *ngFor="let item of answers">
+        <label class="container">{{item.answer}}
+          <input type="radio" name="radio" value="{{item.id}}" [(ngModel)]="answerRadio">
+          <span class="checkmark" [ngClass]="color.className + 'Radio'"></span>
+        </label>
+      </ion-item>
+    </ion-list>
+    <div class="answer__buttons">
+      <div class="answer__button button" (click)="nextQuestion()"
+           [ngClass]="color.gradientClass">
+        <button>Далее</button>
+      </div>
+    </div>
+  </div>
+
+
+</ion-content>

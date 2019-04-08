@@ -1,0 +1,27 @@
+<ion-content class="content__main">
+  <div class="register__container">
+    <div class="profile__photo">
+      <img src="../../assets/imgs/profile.png" alt="">
+    </div>
+    <ion-list no-lines class="register-form__container" *ngIf="beforeSMS">
+      <ion-item class="register-form__input-container">
+        <ion-input type="number" placeholder="Номер телефона" (keyup.enter)="keyboard.hide()" [(ngModel)]="user.phone"></ion-input>
+      </ion-item>
+      <ion-item class="register-form__input-container register-button" (click)="auth()">
+        <button>Войти</button>
+      </ion-item>
+      <ion-item class="register-form__input-container register-button" (click)="goToRegistraion();">
+        <button>Еще не зарегистированы?</button>
+      </ion-item>
+    </ion-list>
+
+    <ion-list no-lines class="register-form__container" *ngIf="!beforeSMS">
+      <ion-item class="register-form__input-container">
+        <ion-input type="number" placeholder="Код из SMS" (keyup.enter)="keyboard.hide()" [(ngModel)]="user.confirmCode"></ion-input>
+      </ion-item>
+      <ion-item class="register-form__input-container register-button" (click)="auth(user)">
+        <button>Войти</button>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

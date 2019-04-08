@@ -1,0 +1,282 @@
+.no-scroll .scroll-content {
+  overflow-y: hidden;
+}
+
+.advertising__container {
+  display: block;
+  width: 100%;
+  height: 42vh;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-bottom: 2%;
+}
+
+.question__pic {
+  height: 21vh;
+  width: 21vh;
+  margin: auto;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+.question__container {
+  width: 100%;
+  margin: 2% auto 0;
+  height: 55%;
+  background-color: #37363b;
+  -webkit-border-radius: 40px 40px 0 0;
+  -moz-border-radius: 40px 40px 0 0;
+  border-radius: 40px 40px 0 0;
+  padding: 30px 40px;
+  box-sizing: border-box;
+}
+
+.question__container h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.question__container ion-item {
+  background-color: transparent;
+}
+
+label.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 500;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-bottom: -10px;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  border: 5px solid #fff;
+  background-color: #fff;
+}
+
+.container input:checked ~ .colorPurpleRadio {
+  background-color: #8114fb;
+}
+
+.container input:checked ~ .colorPinkRadio {
+  background-color: #f3306c;
+}
+
+.container input:checked ~ .colorGreenRadio {
+  background-color: #0cac00;
+}
+
+.container input:checked ~ .colorBlueRadio {
+  background-color: #049ff9;
+}
+
+.container input:checked ~ .colorOrangeRadio {
+  background-color: #f97705;
+}
+
+.container input:checked ~ .colorCyan {
+  background-color: #1bcda9;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+label.container ion-label {
+  margin-bottom: 0;
+}
+
+.question__list .item-block {
+  padding-left: 0;
+}
+
+.answer__buttons {
+  display: flex;
+  justify-content: center;
+  margin: 4vh auto;
+  position: absolute;
+  width: 86%;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.answer__button {
+  width: 100%;
+  height: 6.5vh;
+  border-radius: 25px;
+  background-color: #488aff;
+  /* background: -moz-linear-gradient(0deg, rgb(129, 20, 251) 0%, rgb(165, 85, 255) 100%);
+   background: -webkit-linear-gradient(0deg, rgb(129, 20, 251) 0%, rgb(165, 85, 255) 100%);
+   background: -ms-linear-gradient(0deg, rgb(129, 20, 251) 0%, rgb(165, 85, 255) 100%);
+   background: linear-gradient(0deg, rgb(129, 20, 251) 0%, rgb(165, 85, 255) 100%);*/
+}
+
+.answer__button button {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 500 !important;
+  line-height: 6.5vh;
+}
+
+@media only screen and (max-device-width: 320px) and (max-device-width: 568px) {
+  .question__container h3 {
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+
+  .checkmark {
+    width: 14px;
+    height: 14px;
+  }
+
+  label.container {
+    font-size: 14px;
+  }
+
+  .container input:checked ~ .checkmark {
+    border: 2px solid #fff;
+  }
+
+  .item {
+    min-height: 2px;
+  }
+
+  .answer__buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+}
+
+@media only screen and (max-device-width: 360px) and (max-device-height: 640px) {
+  .question__container h3 {
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+
+  .checkmark {
+    width: 14px;
+    height: 14px;
+  }
+
+  label.container {
+    font-size: 14px;
+  }
+
+  .container input:checked ~ .checkmark {
+    border: 2px solid #fff;
+  }
+
+  .item {
+    min-height: 2px;
+  }
+
+  .answer__buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+}
+
+.colorPurple {
+  background-color: #8114fb;
+}
+
+.colorPink {
+  background-color: #f3306c;
+}
+
+.colorGreen {
+  background-color: #0cac00;
+}
+
+.colorBlue {
+  background-color: #049ff9;
+}
+
+.colorOrange {
+  background-color: #f97705;
+}
+
+.colorCyan {
+  background-color: #1bcda9;
+}
+
+.colorPurpleGradient {
+  background-image: linear-gradient(0deg, rgb(129, 20, 251) 0%, rgb(164, 85, 255) 100%);
+}
+
+.colorPinkGradient {
+  background-image: linear-gradient(0deg, rgb(243, 48, 108) 0%, rgb(255, 93, 143) 100%);
+}
+
+.colorGreenGradient {
+  background-image: linear-gradient(0deg, rgb(12, 172, 0) 0%, rgb(90, 204, 82) 100%);
+}
+
+.colorBlueGradient {
+  background-image: linear-gradient(0deg, rgb(4, 159, 249) 0%, rgb(105, 200, 255) 100%);
+}
+
+.colorOrangeGradient {
+  background-image: linear-gradient(0deg, rgb(249, 119, 5) 0%, rgb(255, 160, 76) 100%);
+}
+
+.colorCyanGradient {
+  background-image: linear-gradient(0deg, rgb(27, 205, 169) 0%, rgb(65, 249, 213) 100%);
+}
+
+/*background-image: -moz-linear-gradient( 0deg, rgb(129,20,251) 0%, rgb(165,85,255) 100%);
+background-image: -webkit-linear-gradient( 0deg, rgb(129,20,251) 0%, rgb(165,85,255) 100%);
+background-image: -ms-linear-gradient( 0deg, rgb(129,20,251) 0%, rgb(165,85,255) 100%);*/

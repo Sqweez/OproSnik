@@ -1,0 +1,49 @@
+ion-slide {
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.swiper-pagination {
+  top: 85%;
+}
+.swiper-pagination-bullet {
+  opacity: 1;
+  border: 1px solid #fff!important;
+  background-color: transparent;
+}
+.swiper-pagination-bullet-active {
+  background-color: #fff;
+}
+.slider-button__skip {
+  text-transform: capitalize;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 200;
+  background: transparent;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  z-index: 999;
+}
+
+.slider-button__continue {
+  background-color: transparent;
+  width: 55%;
+  border: 1.5px solid #fff;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+  transform: translateX(-50%);
+  z-index: 999;
+  letter-spacing: 1px;
+}
+
+.d-none {
+  display: none;
+}

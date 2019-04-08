@@ -1,0 +1,42 @@
+<ion-header no-border="">
+  <ion-navbar>
+    <ion-title>
+    </ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only>
+        <img src="../../assets/imgs/person.png" alt="" class="person__icon">
+        <ion-badge color="danger">{{balance}} ₸</ion-badge>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="content__main">
+
+  <div class="register__container" style="width: 85%;margin: auto;">
+    <div class="profile__photo profile-page__photo">
+      <img src="../../assets/imgs/profile-blue.png" alt="" class="profile__img">
+      <h3 class="profile__name">{{userName}}</h3>
+      <h4 class="profile__name profile__balance">{{balance}} ₸</h4>
+    </div>
+
+    <h4 class="output__info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, laborum.</h4>
+
+    <ion-list no-lines class="register-form__container">
+
+      <ion-item class="register-form__input-container">
+        <ion-input
+          type="number"
+          placeholder="Введите сумму снятия"
+          [(ngModel)]="outputBalance"
+          (ionFocus)="getFocus()"
+          (ionBlur)="getFocus()"
+          (keyup.enter)="keyboard.hide()"></ion-input>
+      </ion-item>
+
+      <ion-item class="register-form__input-container register-button"  (click)="outputMoney()">
+        <button>Перевод</button>
+      </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>

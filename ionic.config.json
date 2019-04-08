@@ -1,5 +1,7 @@
 {
   "name": "SmartOpros",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }

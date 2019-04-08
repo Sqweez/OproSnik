@@ -1,22 +1,43 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import {Component} from '@angular/core';
+import {Platform} from 'ionic-angular';
+import {StatusBar} from '@ionic-native/status-bar';
+import {SplashScreen} from '@ionic-native/splash-screen';
+import {OneSignal} from "@ionic-native/onesignal";
 
-import { HomePage } from '../pages/home/home';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  rootPage: any;
+
+  constructor(
+    platform: Platform,
+    statusBar: StatusBar,
+    // splashScreen: SplashScreen,
+    public oneSignal: OneSignal) {
     platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      statusBar.styleDefault();
-      splashScreen.hide();
+      statusBar.overlaysWebView(false);
+      //splashScreen.hide();
+
+      if (platform.is('cordova')) {
+        this.oneSignal
+          .startInit("bacb690c-e0de-404f-96af-ab10eda3721f", "669362346677")
+          .endInit();
+
+        this.oneSignal.getIds().then(data => {
+          let ids = data;
+          let push = ids.userId;
+          localStorage.setItem("push", push);
+        });
+      }
+
+      if (localStorage.getItem("user_name")) {
+        this.rootPage = "HomePage";
+      }
+      else {
+        this.rootPage = "SliderPage";
+      }
     });
   }
 }
-

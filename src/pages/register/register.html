@@ -1,0 +1,59 @@
+<ion-content class="content__main">
+  <div class="register__container">
+    <div class="profile__photo">
+      <img src="../../assets/imgs/profile.png" alt="">
+    </div>
+    <ng-container *ngIf="beforeSMS">
+
+      <ion-list no-lines class="register-form__container">
+
+        <ion-item class="register-form__input-container">
+          <ion-input
+            type="text"
+            placeholder="ФИО"
+            (keyup.enter)="keyboard.hide()"
+            [(ngModel)]="user.name"></ion-input>
+        </ion-item>
+
+        <ion-item class="register-form__input-container">
+          <ion-datetime
+            displayFormat="DD.MM.YYYY"
+            [(ngModel)]="user.birthDate"
+            monthNames="Январь, Февраль, Март, Апрель, Май, Июнь, Июль, Август, Сентябрь, Октябрь, Ноябрь, Декабрь"
+            monthShortNames="Янв, Фев, Мар, Апр, Май, Июн, Июл, Авг, Сен, Окт, Нояб, Дек"
+            placeholder="Дата рождения"
+          ></ion-datetime>
+        </ion-item>
+
+        <ion-item class="register-form__input-container">
+          <ion-input
+            type="number"
+            placeholder="Номер телефона"
+            (keyup.enter)="keyboard.hide()"
+            [(ngModel)]="user.phone"
+            maxlength="11"
+          ></ion-input>
+        </ion-item>
+
+        <ion-item class="register-form__input-container register-button" (click)="register()">
+          <button>Зарегистроваться</button>
+        </ion-item>
+        <ion-item class="register-form__input-container register-button" (click)="goToAuth();">
+          <button>Уже зарегистированы?</button>
+        </ion-item>
+      </ion-list>
+    </ng-container>
+
+    <ng-container *ngIf="!beforeSMS">
+      <ion-list no-lines class="register-form__container">
+        <ion-item class="register-form__input-container">
+          <ion-input type="number" placeholder="Код из SMS" (keyup.enter)="keyboard.hide()" [(ngModel)]="user.confirmCode"></ion-input>
+        </ion-item>
+        <ion-item class="register-form__input-container register-button" (click)="register(user)">
+          <button>Зарегистроваться</button>
+        </ion-item>
+      </ion-list>
+    </ng-container>
+
+  </div>
+</ion-content>

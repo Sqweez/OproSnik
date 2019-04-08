@@ -1,16 +1,89 @@
-// http://ionicframework.com/docs/theming/
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@font-face {
+  font-family: "FuturaPT";
+  src: url("../assets/fonts/FuturaPTCond-Medium.eot") format("opentype"),
+  url("../assets/fonts/FuturaPTCond-Medium.woff") format("woff");
+  font-style: normal;
+}
 
+ion-buttons {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
 
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
+* {
+  font-family: "Montserrat", "Arial MT", sans-serif;
+}
+
+.toolbar-title{
+  color: #fff;
+}
+
+.toolbar-title-ios, .toolbar-title-md {
+  font-size: 2.1rem;
+  text-align: center;
+}
+
+.toolbar-md, .toolbar-ios {
+  min-height: 36px;
+  position: relative;
+}
+
+ion-navbar {
+  display: flex;
+  align-items: flex-end!important;
+}
+
+.toolbar-background {
+  background-color: transparent;
+}
+
+.header::after {
+  border: 0px !important;
+  border-bottom-color: transparent !important;
+  background-image: none !important;
+  border-bottom: none !important;
+}
+
+ion-content.content__main {
+  background-color: #360302;
+  background-image: linear-gradient(to top, #4dcc73 0%, #07ad63 50%, #33e869 100%);
+}
+
+.person__icon {
+  width: 20px;
+  height: auto;
+  margin-right: 5px;
+}
+
+.badge {
+  border-radius: 22px;
+  text-transform: lowercase;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.back-button {
+  color: transparent;
+}
+
+.back-button::after {
+  content: "";
+  background-image: url("../assets/imgs/back_button.png");
+  background-repeat: no-repeat;
+  -webkit-background-size: 25%;
+  background-size: 42%;
+  position: absolute;
+  bottom: 0!important;
+  left: 30% !important;
+  top: 11% !important;
+}
+
+.d-none {
+  display: none;
+}
+
+.badge-ios, .badge-md {
+  background-color: #ff0000;
+}

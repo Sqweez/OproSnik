@@ -1,0 +1,34 @@
+<ion-header no-border="">
+  <ion-navbar>
+    <ion-title>
+    </ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="navCtrl.push('ProfilePage')">
+        <img src="../../assets/imgs/person.png" alt="" class="person__icon">
+        <ion-badge color="danger">{{balance}} ₸</ion-badge>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content__main">
+  <div class="finish__wrapper">
+    <div class="finish__container">
+      <h5>Опрос пройден!</h5>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, possimus.</p>
+    </div>
+  </div>
+  <div style="
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    margin: auto;">
+    <div class="register-button" (click)="navCtrl.setRoot('HomePage')" style="background-color: transparent;">
+      <button ion-button primary>Главное меню</button>
+    </div>
+    <div class="register-button" (click)="navCtrl.push('ProfilePage')" style="background-color: transparent;">
+      <button ion-button primary>Вывод денег</button>
+    </div>
+  </div>
+
+</ion-content>

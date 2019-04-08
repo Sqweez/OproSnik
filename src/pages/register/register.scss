@@ -1,0 +1,52 @@
+.register__container {
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  color: #fff;
+}
+
+.profile__photo {
+  width: 100%;
+  height: auto;
+  padding-top: 12vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 5vh;
+}
+
+.profile__photo img {
+  height: 40%;
+  width: 40%;
+  margin: auto;
+}
+.register-form__container {
+  margin: 35px 30px!important;
+}
+.register-form__input-container {
+  margin: 15px 0!important;
+  border-radius: 10px;
+  background-color: #3dbd84;
+  color: #fff;
+}
+.register-form__input-container button{
+  background-color: transparent;
+  font-size: 16px;
+  color: #40b062;
+  width: 100%;
+  font-weight: 600;
+}
+
+.register-button {
+  background-color: #fff;
+  color: #40b062;
+}
+
+.register-button > button {
+  font-weight: 500!important;
+}
+
+.datetime-md .datetime-placeholder {
+  color: #87d2ad;
+  margin-left: -7px;
+}
