@@ -7,6 +7,8 @@ import {GLOBAL_CONFIG} from "../../configs/url";
 import {SplashScreen} from "@ionic-native/splash-screen";
 import {getColor} from "../../configs/colors";
 
+@IonicPage()
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'

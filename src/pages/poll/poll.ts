@@ -28,6 +28,7 @@ import {
  * Ionic pages and navigation.
  */
 
+@IonicPage()
 @Component({
   selector: 'page-poll',
   templateUrl: 'poll.html',

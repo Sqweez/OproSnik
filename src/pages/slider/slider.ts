@@ -7,6 +7,7 @@ import {Http} from "@angular/http";
 import {GLOBAL_CONFIG} from "../../configs/url";
 import {SplashScreen} from "@ionic-native/splash-screen";
 
+@IonicPage()
 @Component({
   selector: 'page-slider',
   templateUrl: 'slider.html',

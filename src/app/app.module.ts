@@ -20,14 +20,7 @@ import {AuthPage} from "../pages/auth/auth";
 
 @NgModule({
   declarations: [
-    MyApp,
-    HomePage,
-    PollPage,
-    PollFinishPage,
-    ProfilePage,
-    RegisterPage,
-    SliderPage,
-    AuthPage
+    MyApp
   ],
   imports: [
     BrowserModule,

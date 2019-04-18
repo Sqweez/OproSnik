@@ -16,6 +16,13 @@
         </ion-item>
 
         <ion-item class="register-form__input-container">
+          <ion-select placeholder="Выберите пол" [(ngModel)]="user.gender">
+            <ion-option value="Мужской">Мужской</ion-option>
+            <ion-option value="Женский">Женский</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item class="register-form__input-container">
           <ion-datetime
             displayFormat="DD.MM.YYYY"
             [(ngModel)]="user.birthDate"

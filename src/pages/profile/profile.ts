@@ -11,6 +11,7 @@ import {GLOBAL_CONFIG} from "../../configs/url";
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
+@IonicPage()
 @Component({
   selector: 'page-profile',
   templateUrl: 'profile.html',

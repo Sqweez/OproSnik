@@ -277,6 +277,14 @@ label.container ion-label {
   background-image: linear-gradient(0deg, rgb(27, 205, 169) 0%, rgb(65, 249, 213) 100%);
 }
 
+.answered__counts {
+  position: absolute;
+  bottom: 12vh;
+  right: 2vw;
+  font-size: 10px;
+  color: #fff;
+}
+
 /*background-image: -moz-linear-gradient( 0deg, rgb(129,20,251) 0%, rgb(165,85,255) 100%);
 background-image: -webkit-linear-gradient( 0deg, rgb(129,20,251) 0%, rgb(165,85,255) 100%);
 background-image: -ms-linear-gradient( 0deg, rgb(129,20,251) 0%, rgb(165,85,255) 100%);*/

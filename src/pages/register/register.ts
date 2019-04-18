@@ -12,6 +12,7 @@ import swal from 'sweetalert';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
+@IonicPage()
 @Component({
   selector: 'page-register',
   templateUrl: 'register.html',
@@ -50,7 +51,7 @@ export class RegisterPage {
       this.userData.append("action", "register");
       this.userData.append("birthDate", this.user.birthDate.toString());
       this.userData.append("push", localStorage.getItem("push"));
-
+      this.userData.append("gender", this.user.gender);
 
       this.http.post(url, this.userData).subscribe(data => {
         this.response = data;

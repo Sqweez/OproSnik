@@ -9,6 +9,7 @@ import {getBalance} from "../../configs/balance";
  * Ionic pages and navigation.
  */
 
+@IonicPage()
 @Component({
   selector: 'page-poll-finish',
   templateUrl: 'poll-finish.html',

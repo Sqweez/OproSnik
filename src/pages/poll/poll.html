@@ -36,10 +36,12 @@
         </label>
       </ion-item>
     </ion-list>
+    <div class="answered__counts">
+      <span>Опрос пройден: {{question.count}} раз</span>
+    </div>
     <div class="answer__buttons">
       <div class="answer__button button" (click)="nextQuestion()"
-           [ngClass]="color.gradientClass">
-        <button>Далее</button>
+           [ngClass]="color.gradientClass"> <button>Далее</button>
       </div>
     </div>
   </div>
