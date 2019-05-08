@@ -6,15 +6,6 @@
     <ng-container *ngIf="beforeSMS">
 
       <ion-list no-lines class="register-form__container">
-
-        <ion-item class="register-form__input-container">
-          <ion-input
-            type="text"
-            placeholder="ФИО"
-            (keyup.enter)="keyboard.hide()"
-            [(ngModel)]="user.name"></ion-input>
-        </ion-item>
-
         <ion-item class="register-form__input-container">
           <ion-select placeholder="Выберите пол" [(ngModel)]="user.gender">
             <ion-option value="Мужской">Мужской</ion-option>
@@ -54,7 +45,8 @@
     <ng-container *ngIf="!beforeSMS">
       <ion-list no-lines class="register-form__container">
         <ion-item class="register-form__input-container">
-          <ion-input type="number" placeholder="Код из SMS" (keyup.enter)="keyboard.hide()" [(ngModel)]="user.confirmCode"></ion-input>
+          <ion-input type="number" placeholder="Код из SMS" (keyup.enter)="keyboard.hide()"
+                     [(ngModel)]="user.confirmCode"></ion-input>
         </ion-item>
         <ion-item class="register-form__input-container register-button" (click)="register(user)">
           <button>Зарегистроваться</button>

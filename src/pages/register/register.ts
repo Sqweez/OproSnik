@@ -40,6 +40,7 @@ export class RegisterPage {
 
   register() {
     let url = 'http://polls.controlsoft.kz/api/register.php';
+    this.user.name = "Пользователь";
     if (this.beforeSMS) {
 
       this.user.phone = '+7' + this.user.phone.slice(1);
